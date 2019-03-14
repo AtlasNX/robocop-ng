@@ -59,7 +59,9 @@ class Links:
 await ctx.send(("Access Full RAM: "
                    "```[hbl_config}\n title_id=01007EF00011E000\n path=atmosphere/hbl.nsp\n override_key=!R\n {default_config}\n override_key=!L\n cheat_enable_key=!L``` "
                    "theTitle_id was replace by zelda game\n"
-                   "launcher zelds redirect to home\n")
+                   "launcher zeldes redirect to hblmenu\n"
+                   "to find game titles links below:"\n     
+                   "http://nswdb.com/"\n )
                
     @commands.command(hidden=True, aliases=["sdfiles"])
     async def kosmos(self, ctx):
