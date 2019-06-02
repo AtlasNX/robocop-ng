@@ -126,6 +126,12 @@ class Meme(Cog):
     async def frolics(self, ctx):
         """test"""
         await ctx.send("https://www.youtube.com/watch?v=VmarNEsjpDI")
+            
+    @commands.command(aliases=['bs', "biracy", ".:b:iracy", ".🅱iracy])
+    async def patches(self, ctx):
+        """Yeet"""
+        await ctx.send("🅱or 🅱irated 🅱shop-🅱ames 🅱ou 🅱eed 🅱S 🅱ignature 🅱atches. 🅱s 🅱heir 🅱nly 🅱urpose 🅱s 🅱o 🅱llow 🅱iracy 🅱e\'re 🅱ot 🅱roviding 🅱ny 🅱elp 🅱ith 🅱nstallation 🅱f 🅱aid 🅱atches 🅱r 🅱irated 🅱ames 🅱fterwards")
+        
 
 
 def setup(bot):
