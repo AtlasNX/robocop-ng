@@ -112,7 +112,7 @@ class Meme(Cog):
         await ctx.send("June 15.")
 
     @commands.check(check_if_staff_or_ot)
-    @commands.command(hidden=True, name="bam", "boom")
+    @commands.command(hidden=True, name="bam", aliases=["boom"])
     async def bam_member(self, ctx, target: discord.Member):
         """Bams a user owo"""
         safe_name = await commands.clean_content().convert(ctx, str(target))
