@@ -61,7 +61,8 @@ initial_extensions = ['cogs.common',
                       'cogs.robocronp',
                       'cogs.meme',
                       'cogs.pin',
-                      'cogs.invites']
+                      'cogs.invites'
+                      'cogs.serial_checker']
 
 bot = commands.Bot(command_prefix=get_prefix,
                    description=config.bot_description, pm_help=True)
