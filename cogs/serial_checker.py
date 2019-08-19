@@ -80,7 +80,7 @@ def checkserial(serial_input):
 
 class serialchecker(Cog):
     @commands.command(hidden=True, name="check")
-    async def checkserial(self, ctx, *args):
+    async def checkserial(self, ctx, *args, user: discord.Member):
         ctx.message.delete_message(ctx.message)
 
         if len(args) == 1:
