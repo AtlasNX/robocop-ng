@@ -18,10 +18,10 @@ class Basic(Cog):
         """Yeet"""
         await ctx.send("For pirated eshop-games you need ES signature patches. As their only purpose is to allow piracy we\'re not providing any help with installation of said patches or pirated games afterwards")
     
-    @commands.command(aliases=['videoguides', "vidguides"])
-    async def patches(self, ctx):
+    @commands.command(aliases=['guidevid', "vidguides"])
+    async def videoguides(self, ctx):
         """Yeet the video guides into the fire"""
-        await ctx.send("Most video guides tend to get outdated very quickly or is easy to miss a step. Maybe consider using ours? :shrek:")
+        await ctx.send("Most video guides tend to get outdated very quickly or very easy to miss an important step. Maybe consider using our guide? :shrek:")
         
     @commands.guild_only()
     @commands.command()
