@@ -134,6 +134,18 @@ class Meme(Cog):
         await ctx.send("🅱or 🅱irated 🅱shop-🅱ames 🅱ou 🅱eed 🅱S 🅱ignature 🅱atches. 🅱s 🅱heir 🅱nly 🅱urpose 🅱s 🅱o 🅱llow 🅱iracy 🅱e\'re 🅱ot 🅱roviding 🅱ny 🅱elp 🅱ith 🅱nstallation 🅱f 🅱aid 🅱atches 🅱r 🅱irated 🅱ames 🅱fterwards")
         
     @commands.check(check_if_staff)
+    @commands.command(hidden=True, aliases=['bxfat'])
+    async def bat32(self, ctx):
+        """Yeet"""
+        await ctx.send("🅱he 🅱xFAT 🅱rivers 🅱uilt 🅱nto 🅱he 🅱witch 🅱as 🅱een 🅱nown "
+                      "🅱o 🅱orrupt 🅱D 🅱ards 🅱nd 🅱omebrew 🅱nly 🅱akes 🅱his 🅱orse. "
+                      "🅱ackup 🅱verything 🅱n 🅱our 🅱D 🅱ard 🅱s 🅱oon 🅱s 🅱ossible "
+                      "🅱nd 🅱ormat 🅱t 🅱o 🅱AT32. 🅱n 🅱indows, 🅱f 🅱our 🅱D 🅱ard 🅱s "
+                      "🅱ver 🅱2GB 🅱hen 🅱t 🅱ill 🅱ot 🅱et 🅱ou 🅱elect 🅱AT32 🅱rom "
+                      "🅱he 🅱uilt-🅱n 🅱ormat 🅱ool, 🅱owever 🅱ou 🅱an 🅱se 🅱 🅱ool "
+                      "🅱ike 🅱UIFormat 🅱o 🅱ormat 🅱t.")
+        
+    @commands.check(check_if_staff)
     @commands.command(hidden=True, aliases=['toilet'])
     async def flush(self, ctx, target: discord.Member):
         """Flushes Lucy uwu"""
