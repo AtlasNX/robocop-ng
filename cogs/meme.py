@@ -136,7 +136,7 @@ class Meme(Cog):
     @commands.check(check_if_staff)
     @commands.command(hidden=True, aliases=['bxfat'])
     async def bat32(self, ctx):
-        """Yeet"""
+        """Epic"""
         await ctx.send("🅱he 🅱xFAT 🅱rivers 🅱uilt 🅱nto 🅱he 🅱witch 🅱as 🅱een 🅱nown "
                       "🅱o 🅱orrupt 🅱D 🅱ards 🅱nd 🅱omebrew 🅱nly 🅱akes 🅱his 🅱orse. "
                       "🅱ackup 🅱verything 🅱n 🅱our 🅱D 🅱ard 🅱s 🅱oon 🅱s 🅱ossible "
