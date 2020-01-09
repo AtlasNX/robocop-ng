@@ -134,7 +134,7 @@ class Meme(Cog):
         await ctx.send("🅱or 🅱irated 🅱shop-🅱ames 🅱ou 🅱eed 🅱S 🅱ignature 🅱atches. 🅱s 🅱heir 🅱nly 🅱urpose 🅱s 🅱o 🅱llow 🅱iracy 🅱e\'re 🅱ot 🅱roviding 🅱ny 🅱elp 🅱ith 🅱nstallation 🅱f 🅱aid 🅱atches 🅱r 🅱irated 🅱ames 🅱fterwards")
         
     @commands.check(check_if_staff)
-    @commands.command(hidden=True, aliases=['bxfat'])
+    @commands.command(hidden=True, aliases=['bxfat', "bsfat"])
     async def bat32(self, ctx):
         """Epic"""
         await ctx.send("🅱he 🅱xFAT 🅱rivers 🅱uilt 🅱nto 🅱he 🅱witch 🅱as 🅱een 🅱nown "
