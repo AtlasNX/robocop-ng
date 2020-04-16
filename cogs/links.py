@@ -16,10 +16,15 @@ class Links(Cog):
         """Link to the Pegaswitch repo"""
         await ctx.send("https://github.com/reswitched/pegaswitch")
 
-    @commands.command(hidden=True, aliases=["atmos"])
+    @commands.command(hidden=True, aliases=["atmos", "ams"])
     async def atmosphere(self, ctx):
         """Link to the Atmosphere repo"""
         await ctx.send("https://github.com/atmosphere-nx/atmosphere")
+
+    @commands.command(hidden=True)
+    async def hekate(self, ctx):
+        """Link to the Hekate repo"""
+        await ctx.send("https://github.com/CTCaer/hekate") 
 
     @commands.command(hidden=True, aliases=["xyproblem"])
     async def xy(self, ctx):
