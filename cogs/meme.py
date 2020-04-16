@@ -175,6 +175,15 @@ class Meme(Cog):
 
         await ctx.message.delete()
         await ctx.send(text)
+    
+    @commands.command(hidden=True, aliases=['uwuify'])
+    async def owoify(self, ctx, *, message: str):
+        """Turns any text given into owo language"""
+        message = message.replace('L', 'W').replace('l', 'w')
+        message = message.replace('R', 'W').replace('r', 'w')
         
+        await ctx.message.delete()
+        await ctx.send(message)
+
 def setup(bot):
     bot.add_cog(Meme(bot))

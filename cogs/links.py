@@ -21,11 +21,7 @@ class Links(Cog):
         """Link to the Atmosphere repo"""
         await ctx.send("https://github.com/atmosphere-nx/atmosphere")
 
-<<<<<<< HEAD
-    @commands.command(hidden=True)
-=======
     @commands.command(hidden=True, aliases=["bootloader"])
->>>>>>> 7bc3ae71eba91c813ef089c8ad7c1ea95289ce3f
     async def hekate(self, ctx):
         """Link to the Hekate repo"""
         await ctx.send("https://github.com/CTCaer/hekate") 
