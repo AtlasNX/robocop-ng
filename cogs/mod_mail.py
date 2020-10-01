@@ -62,7 +62,7 @@ class ModMail(Cog):
         if len(body.strip()) == 0:
             await ctx.send("A message can not be empty.")
             return
-
+        # Limit message to 2048 characters to not go over the embed limit.
         if len(body.strip()) > 2048:
             await ctx.send("A message can not be longer than 2048 characters.")
             return
