@@ -64,8 +64,12 @@ initial_extensions = ['cogs.common',
                       'cogs.meme',
                       'cogs.uwu']
 
-bot = commands.Bot(command_prefix=get_prefix,
-                   description=config.bot_description, pm_help=True)
+intents = discord.Intents.default()
+intents.typing = False
+intents.members = True
+
+bot = commands.Bot(command_prefix=get_prefix, pm_help=True,
+                   description=config.bot_description, intents=intents)
 
 bot.log = log
 bot.loop = asyncio.get_event_loop()
