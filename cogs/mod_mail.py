@@ -30,6 +30,16 @@ class ModMail(Cog):
         embed.colour = self.get_message_color(message)
         embed.set_footer(text=f"{self.get_message_icon(message)} - {author.id}")
         return embed
+    
+    def build_betch_embed(self, author, message):
+        embed = discord.Embed()
+        embed.add_field(name=message.err_code, value=message.description)
+        embed.set_author(
+            name=f"{author.name}#{author.discriminator}", icon_url=author.avatar_url
+        )
+        embed.colour = self.get_message_color(message)
+        embed.set_footer(text=f"{self.get_message_icon(message)} - {author.id}")
+        return embed
 
     def get_message_color(self, message):
         if message["resolved"] == True:
@@ -49,6 +59,64 @@ class ModMail(Cog):
 
     # Commands
 
+    @commands.check(check_if_verified_or_dms)
+    @commands.command(aliases=["betch"])
+    async def submiterr(self, ctx, err_code: str = "", *, description: str = ""):
+        """Submits an error to be added to BETCH"""
+
+        # Prevent sending of blank messages.
+        if len(body.strip()) == 0:
+            await ctx.send("A message can not be empty.")
+            return
+        # Limit messages to 1024 characters to not go over the field limit.
+        if len(body.strip()) > 1024:
+            await ctx.send("A message can not be longer than 1024 characters.")
+            return
+
+        logs = get_userlog()
+        uid = str(ctx.author.id)
+
+        # Get the timeout from the config and default it to 15 seconds.
+        timeout = getattr(config, "submiterr_timeout", 15)
+
+        # Make sure our user exists in the userlog, and they've sent a message before.
+        if uid in logs and "mail" in logs[uid] and len(logs[uid]["mail"]) != 0:
+            last_message = logs[uid]["mail"][-1]
+
+            # Prevents sending the same message.
+            if last_message["body"].strip() == body.strip():
+                await ctx.send("Unable to send message.")
+                return
+
+            # Rate limit messages.
+            delta_time = int(time.time()) - last_message["timestamp"]
+            if delta_time < timeout:
+                await ctx.send(
+                    f"Please wait {timeout - delta_time} seconds before sending another message."
+                )
+                return
+
+        message = {
+            "err_code": err_code,
+            "description": description,
+            "timestamp": int(time.time()),
+            "resolved": False,
+            "replier_id": 0,
+            "replier_name": "",
+            "message_id": 0,
+        }
+
+        # Send message
+        err_channel = self.bot.get_channel(config.err_channel)
+        message["message_id"] = (
+            await err_channel.send(embed=self.build__betch_embed(ctx.author, message))
+        ).id
+
+        # Log messages to the userlog.
+        self.add_mail_log(uid, message)
+
+        await ctx.send(f"{ctx.author.mention} - Error sumbitted.")
+    
     @commands.check(check_if_verified_or_dms)
     @commands.command(aliases=["creport"])
     async def modmail(self, ctx, *, body: str = ""):
